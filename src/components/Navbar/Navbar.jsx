@@ -20,26 +20,33 @@ const Navbar = () => {
   const closeMobileMenu = () => setIsOpen(false)
 
   return (
-    <Nav>
-      <Left>
-        <img src={Logo} alt="Airbnb" />
-        <Search />
-      </Left>
-      <Hamburger onClick={handleClick}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Menu isOpen={isOpen}>
-        {MenuContent.map((item, index) => (
-          <MenuLink key={index} href={item.href}>
-            {item.title}
-          </MenuLink>
-        ))}
-      </Menu>
-    </Nav>
+    <Container>
+      <Nav>
+        <Left>
+          <img src={Logo} alt="Airbnb" />
+          <Search />
+        </Left>
+        <Hamburger onClick={handleClick}>
+          <img src={isOpen ? ClocseIcon : MenuIcon} alt="Menu" />
+        </Hamburger>
+        <Menu isOpen={isOpen}>
+          {MenuContent.map((item, index) => (
+            <MenuLink key={index} href={item.href}>
+              {item.title}
+            </MenuLink>
+          ))}
+        </Menu>
+      </Nav>
+      <NavigationBar />
+    </Container>
   )
 }
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+`
+
 const MenuLink = styled.a`
   padding: 1rem 1rem;
   cursor: pointer;
@@ -49,24 +56,24 @@ const MenuLink = styled.a`
   transition: all 0.3s ease-in;
   font-size: 14px;
   &:hover {
-    color: #7b7fda;
+    color: #da7b7b;
   }
 `
 
 const Nav = styled.div`
+  // width: 100%;
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   background: white;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-    rgb(209, 213, 219) 0px 0px 0px 1px;
+  // z-index: 1;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+  //   rgb(209, 213, 219) 0px 0px 0px 1px;
 `
 
 const Menu = styled.div`
@@ -85,14 +92,9 @@ const Menu = styled.div`
 
 const Hamburger = styled.div`
   display: none;
-  flex-direction: column;
   cursor: pointer;
-  span {
-    height: 2px;
+  img {
     width: 25px;
-    background: #7b7fda;
-    margin-bottom: 4px;
-    border-radius: 5px;
   }
   @media ${devices.tablet} {
     display: flex;

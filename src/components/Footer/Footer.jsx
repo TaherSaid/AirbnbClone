@@ -117,11 +117,11 @@ const Footer = () => {
           <span>Airbnb, Inc.</span>
         </div>
         <TermPrivacy>
-          <IconContainer>
+          <TermContainer>
             <span>Terms</span>
             <span>Privacy</span>
             <span>Site Map</span>
-          </IconContainer>
+          </TermContainer>
           <span>
             <img className="facebookIcon" src={facebook} />
           </span>
@@ -175,7 +175,7 @@ const Language = styled.div`
   @media ${devices.tablet} {
     > select {
       margin-top: 1rem;
-      width: 10rem;
+      width: 100%;
     }
   }
 `
@@ -196,6 +196,7 @@ const Section = styled.div`
 const Bottom = styled.div`
   margin-top: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 1rem;
   padding-left: 2rem;
@@ -215,16 +216,20 @@ const Bottom = styled.div`
 `
 const TermPrivacy = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   > span {
     color: #767676;
     font-size: 15px;
   }
 `
-const IconContainer = styled.div`
-  @media ${devices.tablet}{
-    display:none;
-  }
+
+const TermContainer = styled.div`
+  display:flex;
+  flex-wrap: wrap;
+  gap:1rem;
+
+ 
 }
 `
 
