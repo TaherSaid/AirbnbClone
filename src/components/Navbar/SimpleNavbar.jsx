@@ -24,7 +24,6 @@ const Container = styled.div`
 `
 const Nav = styled.div`
   width: 100%;
-  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,8 +32,8 @@ const Nav = styled.div`
 `
 
 const Left = styled.div`
-  display: flex;
-  padding: 1rem 0 1rem 0.5rem;
+  flex: 1;
+  padding: 1rem 0 1rem 2rem;
   > img {
     width: 1.875rem;
     height: 1.884rem;

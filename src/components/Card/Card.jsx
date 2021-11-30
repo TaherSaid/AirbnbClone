@@ -46,8 +46,8 @@ const ImageContainer = styled.div`
 
 const ImageContent = styled.div`
   position: absolute;
-  bottom: 1rem;
-  left: 2rem;
+  bottom: 0.7rem;
+  left: 0.7rem;
   max-width: 60%;
 
   > h2 {

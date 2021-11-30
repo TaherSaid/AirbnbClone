@@ -17,7 +17,7 @@ const LoginMethod = [
 
 const Login = () => {
   return (
-    <div>
+    <LoginContainer>
       <SimpleNavbar />
       <Container>
         <h2>Log in or sign up</h2>
@@ -50,9 +50,14 @@ const Login = () => {
           ))}
         </LogWithOther>
       </Container>
-    </div>
+    </LoginContainer>
   )
 }
+
+const LoginContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 const LogWithOther = styled.div`
   width: 80%;
@@ -108,6 +113,9 @@ const PhoneField = styled.div`
       border: none;
       font-size: 1rem;
       border-bottom: 0.0057rem solid #717171;
+      &:focus {
+        outline: #717171;
+      }
     }
     > input {
       font-family: Sanfrancisco;
@@ -118,15 +126,16 @@ const PhoneField = styled.div`
   }
 `
 const Container = styled.div`
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #484848;
+  width: 40%;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   border-radius: 0.5rem;
+  margin-top: 5%;
+  padding-bottom: 1rem;
   > h2 {
     font-size: 1.2rem;
     font-family: Sanfrancisco;
@@ -152,10 +161,11 @@ const Container = styled.div`
     border: none;
     border-radius: 0.5rem;
   }
+  @media ${devices.tablet} {
+    width: 100%;
+  }
   @media ${devices.mobileL} {
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
+    width: 100%;
   }
 `
 

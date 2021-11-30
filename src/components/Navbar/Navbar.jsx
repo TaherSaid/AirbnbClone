@@ -54,9 +54,10 @@ const MenuLink = styled(Link)`
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+  font-size: 14px;
+  font-family: Sanfrancisco;
   color: #484848;
   transition: all 0.3s ease-in;
-  font-size: 14px;
   &:hover {
     color: #da7b7b;
   }
