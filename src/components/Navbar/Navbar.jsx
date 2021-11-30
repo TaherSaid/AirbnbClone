@@ -100,10 +100,12 @@ const Hamburger = styled.div`
 const Left = styled.div`
   display: flex;
   padding: 1rem 0 1rem 0.5rem;
-  > img {
-    width: 1.875rem;
-    height: 1.884rem;
-    padding: 0.2rem 1rem 0 1rem;
+  > a {
+    img {
+      width: 1.875rem;
+      height: 1.884rem;
+      padding: 0.2rem 1.5rem 0 1rem;
+    }
   }
   @media ${devices.laptop} {
     > div {
