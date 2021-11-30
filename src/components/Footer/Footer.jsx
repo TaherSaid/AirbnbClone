@@ -88,67 +88,78 @@ const data = {
 const Footer = () => {
   return (
     <Container>
-      <Top>
-        <Language>
-          <select>
-            {data?.languages?.map((item, index) => (
-              <option key={index}>{item}</option>
-            ))}
-          </select>
-          <select>
-            {data?.languages?.map((item, index) => (
-              <option key={index}>{item}</option>
-            ))}
-          </select>
-        </Language>
-        {data?.sections?.map(({ sectionTitle, list }, index) => (
-          <Section key={index}>
-            <h4>{sectionTitle}</h4>
-            {list.map(({ title }, index) => (
-              <h5 key={index}>{title}</h5>
-            ))}
-          </Section>
-        ))}
-      </Top>
+      <div>
+        <Top>
+          <Language>
+            <select>
+              {data?.languages?.map((item, index) => (
+                <option key={index}>{item}</option>
+              ))}
+            </select>
+            <select>
+              {data?.languages?.map((item, index) => (
+                <option key={index}>{item}</option>
+              ))}
+            </select>
+          </Language>
+          {data?.sections?.map(({ sectionTitle, list }, index) => (
+            <Section key={index}>
+              <h4>{sectionTitle}</h4>
+              {list.map(({ title }, index) => (
+                <h5 key={index}>{title}</h5>
+              ))}
+            </Section>
+          ))}
+        </Top>
 
-      <Bottom>
-        <div>
-          <img src={Logo} />
-          <span>Airbnb, Inc.</span>
-        </div>
-        <TermPrivacy>
-          <TermContainer>
-            <span>Terms</span>
-            <span>Privacy</span>
-            <span>Site Map</span>
-          </TermContainer>
-          <span>
-            <img className="facebookIcon" src={facebook} />
-          </span>
-          <span>
-            <img className="twitterIcon" src={twitter} />
-          </span>
-          <span>
-            <img className="instagramIcon" src={instagram} />
-          </span>
-        </TermPrivacy>
-      </Bottom>
+        <Bottom>
+          <div>
+            <img src={Logo} />
+            <span>Airbnb, Inc.</span>
+          </div>
+          <TermPrivacy>
+            <TermContainer>
+              <span>Terms</span>
+              <span>Privacy</span>
+              <span>Site Map</span>
+            </TermContainer>
+            <span>
+              <img className="facebookIcon" src={facebook} />
+            </span>
+            <span>
+              <img className="twitterIcon" src={twitter} />
+            </span>
+            <span>
+              <img className="instagramIcon" src={instagram} />
+            </span>
+          </TermPrivacy>
+        </Bottom>
+      </div>
     </Container>
   )
 }
 
 const Container = styled.footer`
   position: absolute;
-  width: 80%;
+  border-top: 1px solid #dbdbdb;
+  width: 100%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, 0%);
+  > div {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+  }
 `
 
 const Top = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 10%;
+  justify-content: center;
+  gap: 15%;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 1rem;
 

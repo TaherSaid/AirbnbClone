@@ -3,16 +3,17 @@ import Search from "./Search"
 import styled from "styled-components"
 import NavigationBar from "./NavigationBar"
 import { devices } from "../../BreakPoint"
+import { Link } from "gatsby"
 
 import Logo from "../../images/Logo.png"
 import MenuIcon from "../../images/menu.svg"
 import ClocseIcon from "../../images/delete.svg"
 
 const MenuContent = [
-  { title: "Become a Host", href: "#" },
-  { title: "Help", href: "#" },
-  { title: "Sign Up", href: "#" },
-  { title: "Log In", href: "#" },
+  { title: "Become a Host", href: "/BecomeHost" },
+  { title: "Help", href: "/" },
+  { title: "Sign Up", href: "/Login" },
+  { title: "Log In", href: "/Login" },
 ]
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +23,9 @@ const Navbar = () => {
     <Container>
       <Nav>
         <Left>
-          <img src={Logo} alt="Airbnb" />
+          <Link to="/">
+            <img src={Logo} alt="Airbnb" />
+          </Link>
           <Search />
         </Left>
         <Hamburger onClick={handleClick}>
@@ -30,7 +33,7 @@ const Navbar = () => {
         </Hamburger>
         <Menu isOpen={isOpen}>
           {MenuContent.map((item, index) => (
-            <MenuLink key={index} href={item.href}>
+            <MenuLink key={index} to={item.href}>
               {item.title}
             </MenuLink>
           ))}
@@ -46,7 +49,7 @@ const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 `
 
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
   padding: 1rem 1rem;
   cursor: pointer;
   text-align: center;
@@ -67,12 +70,6 @@ const Nav = styled.div`
   align-items: center;
   flex-wrap: wrap;
   background: white;
-  // z-index: 1;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-  //   rgb(209, 213, 219) 0px 0px 0px 1px;
 `
 
 const Menu = styled.div`
