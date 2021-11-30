@@ -17,7 +17,6 @@ const MenuContent = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const handleClick = () => setIsOpen(!isOpen)
-  const closeMobileMenu = () => setIsOpen(false)
 
   return (
     <Container>

@@ -37,6 +37,7 @@ const Container = styled.div`
   > div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 `
 

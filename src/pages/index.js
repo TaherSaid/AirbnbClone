@@ -26,8 +26,6 @@ export const query = graphql`
           id: contentful_id
           price
           rating
-          title
-          tag
           image {
             gatsbyImageData(quality: 100)
           }

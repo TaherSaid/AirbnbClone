@@ -47,7 +47,7 @@ const ImageContainer = styled.div`
 const ImageContent = styled.div`
   position: absolute;
   bottom: 1rem;
-  left: 1rem;
+  left: 2rem;
   max-width: 60%;
 
   > h2 {
@@ -81,6 +81,7 @@ const Details = styled.div`
   > p {
     font-family: Sanfrancisco;
     margin: 0.2rem 0;
+    max-width: fit-content;
   }
 `
 
