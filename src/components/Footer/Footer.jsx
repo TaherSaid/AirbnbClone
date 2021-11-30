@@ -232,6 +232,7 @@ const TermPrivacy = styled.div`
   > span {
     color: #767676;
     font-size: 15px;
+    font-family: Sanfrancisco;
   }
 `
 
